@@ -45,4 +45,3 @@ class server extends ConfigServer{
 
 
 new server();
-
