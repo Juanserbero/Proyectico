@@ -1,11 +1,11 @@
-import { Column, Entity } from "typeorm";
+import { BaseEntity, Column, Entity } from "typeorm";
 
 @Entity({ name: "artista" })
 	export class UserEntity extends BaseEntity{
     	@Column()
-    	usuario!: 'postgre';
+    	usuario!: 'postgres';
 	//  ……… atributo
-    constructor(private id: number, private nombre: string, private fecha: string, private pais: string, private genero: string ){
+    constructor(private id: number, private Nombre: string, private Fecha: string, private Pais: string, private Genero: string ){
         
         super();
 
