@@ -6,17 +6,15 @@ const connectDB = new DataSource({
     type: "postgres", // en caso de postgree es postgree
     host: "localhost",
     port: 5432,
-    username: "postgre",
-    password: "123456",
+    username: "postgres",
+    password: "5432",
     database: "Musiteca",
     logging: false,
     synchronize: true,
-    entities: ["dist/Entities/*.js"],
+    entities: ["dist/modles/*/Entities/*.js"],
     migrations: [__dirname + "../../src/migrations/*{.ts, .js}"],
     extra: {
-        ssl: {
-            rejectUnauthorized: false
-        }
+        
     }
 });
 connectDB

@@ -8,7 +8,7 @@ import connectDB from "./config/ormconfig";
 class server extends ConfigServer{
     // variables de la clase
     public app: express.Application = express();
-    private port: number = this.getNumberEnv("PORT");
+    private port: number = 8000; //this.getNumberEnv("PORT");
     //constructor de la clase
     constructor() {
         super();

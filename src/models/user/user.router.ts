@@ -1,4 +1,4 @@
-import {  UserController } from "./controllers/user.controllers";
+import {  UserController } from "./artista/controllers/user.controllers";
 import { BaseRouter } from "../shared/router/router";
 
 
