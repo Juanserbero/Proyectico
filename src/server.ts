@@ -1,7 +1,7 @@
 import express from 'express';
 import morgan from 'morgan';
 import cors from 'cors';
-import { UserRouter } from './user/user.router';
+import { UserRouter } from './models/artista/user.router';
 import { ConfigServer } from './config/config';
 import connectDB from "./config/ormconfig";
 

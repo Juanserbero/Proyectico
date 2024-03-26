@@ -1,13 +1,14 @@
 import { Request, Response } from "express";
+import { Router } from "express";
 
-export class UserController {
+export class ArtistaController {
 	getUser(req: Request, res: Response ){
 		res.status(200).json({
 			user: "Nombre de Usuario",
 		});
 	}
 }
-import { Router } from "express";
+
 export class BaseRouter<T>{
     public router: Router;
     public controller: T;
