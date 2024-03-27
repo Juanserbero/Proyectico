@@ -1,20 +1,20 @@
 import { DeleteResult, UpdateResult } from "typeorm";
 import { BaseService } from "../../config/base.service";
-import { UserTDO } from "../dto/usuario.dto";
-import { UsuarioEntity } from "../entities/usuario.entity";
+import { UserTDO } from "../dto/user.dto";
+import { UserEntity } from "../Entities/artista_user";
 
 export class UserService extends BaseService<UserEntity> {
     constructor(){
-        super(UsuarioEntity);
+        super(UserEntity);
     }
 	// servicio para obtener todos los usuarios
-    async findAllUsers():Promise<UsuarioEntity[]> {
+    async findAllUsers():Promise<UserEntity[]> {
         return (await this.execRepository).find();
     }
      
     // servicio para obtener un usuarios según id
-    async findUserById(id: string): Promise<UserEntity | null>     {
-        return (await this.execRepository).findOneBy({ id });   
+    async findUserById(id:number): Promise<UserEntity | null>  {
+        return (await this.execRepository).findOneBy( {id} );   
     }
     // servicio para crear un usuario
  async createUser(body: UserTDO): Promise<UserEntity>{
@@ -22,7 +22,7 @@ export class UserService extends BaseService<UserEntity> {
     }
  
     // eliminar un usuario
-    async deleteUser(id: string): Promise<DeleteResult>{
+    async deleteUser(id: number): Promise<DeleteResult>{
         return (await this.execRepository).delete({id});
     }
     // actualizar un usuario
