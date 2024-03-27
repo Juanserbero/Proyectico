@@ -5,7 +5,7 @@ import { BaseEntity, Column, Entity } from "typeorm";
     	@Column()
     	usuario!: 'postgres';
 	//  ……… atributo
-    constructor(private id: number, private Nombre: string,){
+    constructor(private id: number, private Nombre: string, private Fecha_Creacion: Date ){
         super();
 
     }

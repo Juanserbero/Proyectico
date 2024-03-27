@@ -2,6 +2,7 @@ import { DataSource } from "typeorm";
 import dotenv from "dotenv";
 
 dotenv.config();
+
 const connectDB = new DataSource({
     type: "postgres", // en caso de postgree es postgree
     host: "localhost",
@@ -11,7 +12,7 @@ const connectDB = new DataSource({
     database: "Musiteca",
     logging: false,
     synchronize: true,
-    entities: ["dist/modles/*/Entities/*.js"],
+    entities: ["dist/modles/*/entitie/*.js"],
     migrations: [__dirname + "../../src/migrations/*{.ts, .js}"],
     extra: {
         
