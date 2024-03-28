@@ -1,7 +1,7 @@
 import { DeleteResult, UpdateResult } from "typeorm";
 import { BaseService } from "../../config/base.service";
 import { AlbumDTO } from "./album.dto";
-import { AlbumEntity } from "./album";
+import { AlbumEntity } from "./entitie/album";
 
 export class AlbumServices extends BaseService<AlbumEntity> {
     constructor(){

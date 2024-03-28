@@ -1,7 +1,7 @@
 import { DeleteResult, UpdateResult } from "typeorm";
 import { BaseService } from "../../config/base.service";
 import { Artista_UserDTO } from "./artista_user.dto";
-import { Artista_UserEntity } from "./artista_user";
+import { Artista_UserEntity } from "./entitie/artista_user";
 
 export class Artista_UserServices extends BaseService<Artista_UserEntity> {
     constructor(){

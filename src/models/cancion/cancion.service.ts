@@ -1,7 +1,7 @@
 import { DeleteResult, UpdateResult } from "typeorm";
 import { BaseService } from "../../config/base.service";
 import { CancionDTO } from "./cancion.dto";
-import { CancionEntity } from "./cancion";
+import { CancionEntity } from "./entitie/cancion";
 
 export class AdminServices extends BaseService<CancionEntity> {
     constructor(){

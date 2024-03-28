@@ -12,7 +12,7 @@ const connectDB = new DataSource({
     database: "Musiteca",
     logging: false,
     synchronize: true,
-    entities: ["dist/modles/*/entitie/*.js"],
+    entities: ["dist/models/*/entitie/*.js"],
     migrations: [__dirname + "../../src/migrations/*{.ts, .js}"],
     extra: {
         

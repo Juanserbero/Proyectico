@@ -1,4 +1,5 @@
-import { BaseEntity,PrimaryGeneratedColumn, Column, Entity } from "typeorm";
+import { BaseEntity,PrimaryGeneratedColumn, Column, Entity, ManyToOne } from "typeorm";
+import { AlbumEntity } from "../../album/entitie/album";
 
 @Entity({ name: "artista" })
 	export class ArtistaEntity extends BaseEntity{
@@ -31,6 +32,9 @@ import { BaseEntity,PrimaryGeneratedColumn, Column, Entity } from "typeorm";
 	@Column()
 	Biografia!: String;
 
+
+	@ManyToOne(() => AlbumEntity, (album) => album.artistas)
+	album!: AlbumEntity;
 	
 }
 
@@ -50,3 +54,4 @@ import { BaseEntity,PrimaryGeneratedColumn, Column, Entity } from "typeorm";
 // Entidad donde no esta la llave foranea
 // @OneToMany(()=> CustomerEntity, (customer) => customer.user)
 // customers!: CustomerEntity[]; 
+

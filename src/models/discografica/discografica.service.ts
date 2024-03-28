@@ -1,7 +1,7 @@
 import { DeleteResult, UpdateResult } from "typeorm";
 import { BaseService } from "../../config/base.service";
 import { DiscograficaDTO } from "./discografica.dto";
-import { DiscograficaEntity} from "./discografica";
+import { DiscograficaEntity} from "./entitie/discografica";
 
 export class DiscograficaServices extends BaseService<DiscograficaEntity> {
     constructor(){

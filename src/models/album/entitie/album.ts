@@ -1,5 +1,7 @@
-import { BaseEntity,PrimaryGeneratedColumn,Column, Entity, IntegerType ,OneToMany} from "typeorm";
-import { DiscograficaEntity } from "../discografica/discografica";
+import { BaseEntity,PrimaryGeneratedColumn,Column, Entity, IntegerType ,OneToMany, ManyToOne} from "typeorm";
+import { DiscograficaEntity } from "../../discografica/entitie/discografica";
+import { ArtistaEntity } from "../../artista/entitie/artista";
+import { CancionEntity } from "../../cancion/entitie/cancion";
 
 
 
@@ -54,7 +56,13 @@ import { DiscograficaEntity } from "../discografica/discografica";
 // user!: UserEntity;
 //  
 // Entidad donde no esta la llave foranea
-@OneToMany(()=> DiscograficaEntity, (id) => id.id)
-album!: AlbumEntity[]; 
+@OneToMany(()=> DiscograficaEntity, (discografica) => discografica.album)
+discograficas!: DiscograficaEntity[]; 
+
+@OneToMany(()=> ArtistaEntity, (artista) => artista.album)
+artistas!: ArtistaEntity[];
+
+@ManyToOne(() => CancionEntity, (cancion) => cancion.album)
+	canciones!: CancionEntity;
 
 }

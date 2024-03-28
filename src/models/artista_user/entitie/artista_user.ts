@@ -1,6 +1,8 @@
-import { BaseEntity, PrimaryGeneratedColumn, Column, Entity } from "typeorm";
+import { BaseEntity, PrimaryGeneratedColumn, Column, Entity, ManyToOne } from "typeorm";
+import { ArtistaEntity } from "../../artista/entitie/artista";
+import { AlbumEntity } from "../../album/entitie/album";
 
-@Entity({ name: "Artista_User" })
+@Entity({ name: "artista_user" })
 export class Artista_UserEntity extends BaseEntity {
 	// 	@Column()
 	// 	usuario!: 'postgres';
@@ -9,12 +11,14 @@ export class Artista_UserEntity extends BaseEntity {
 	    // super();
 	@PrimaryGeneratedColumn()
 	id!: String;
-
+ 
 	@Column({ name: "Nombre" })
 	nombre_Artista_User!: string;
 
 	@Column()
 	password!: string;
+
+	
 }
 
 
