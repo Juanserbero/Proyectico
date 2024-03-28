@@ -11,10 +11,10 @@ export class AdminEntity extends BaseEntity {
 	//     super();
 	
 	@PrimaryGeneratedColumn()
-	id!: number;
+	id!: String;
 
 	@Column({ name: "Nombre" })
-	nombre_Artista_User!: string;
+	nombre_Admin!: string;
 
 	@Column()
 	password!: string;

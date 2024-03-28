@@ -13,16 +13,16 @@ export class AdminServices extends BaseService<AdminEntity> {
     }
      
     // servicio para obtener un usuarios según id
-    async findAdminById(id:number): Promise<AdminEntity | null>  {
+    async findAdminById(id:String): Promise<AdminEntity | null>  {
         return (await this.execRepository).findOneBy( {id} );   
     }
     // servicio para crear un administrador
- async createAmin(body: AdminTDO): Promise<AdminEntity>{
+ async createAdmin(body: AdminTDO): Promise<AdminEntity>{
         return (await this.execRepository).save(body);
     }
  
     // eliminar un usuario
-    async deleteAdmin(id: number): Promise<DeleteResult>{
+    async deleteAdmin(id: String): Promise<DeleteResult>{
         return (await this.execRepository).delete({id});
     }
     // actualizar un usuario
