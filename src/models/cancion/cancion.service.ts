@@ -1,32 +1,33 @@
 import { DeleteResult, UpdateResult } from "typeorm";
 import { BaseService } from "../../config/base.service";
-import { UserTDO } from "../dto/user.dto";
-import { UserEntity } from "../Entities/artista_user";
+import { CancionDTO } from "./cancion.dto";
+import { CancionEntity } from "./cancion";
 
-export class UserService extends BaseService<UserEntity> {
+export class AdminServices extends BaseService<CancionEntity> {
     constructor(){
-        super(UserEntity);
+        super(CancionEntity);
     }
 	// servicio para obtener todos los usuarios
-    async findAllUsers():Promise<UserEntity[]> {
+    async findAllCancion():Promise<CancionEntity[]> {
         return (await this.execRepository).find();
     }
      
     // servicio para obtener un usuarios según id
-    async findUserById(id:number): Promise<UserEntity | null>  {
+    async findCancionById(id:String): Promise<CancionEntity | null>  {
         return (await this.execRepository).findOneBy( {id} );   
     }
-    // servicio para crear un usuario
- async createUser(body: UserTDO): Promise<UserEntity>{
+    // servicio para crear un administrador
+ async createCancion(body: CancionDTO): Promise<CancionEntity>{
         return (await this.execRepository).save(body);
     }
  
     // eliminar un usuario
-    async deleteUser(id: number): Promise<DeleteResult>{
+    async deleteCancion(id: String): Promise<DeleteResult>{
         return (await this.execRepository).delete({id});
     }
     // actualizar un usuario
-   async updateUser(id: string, infoUpdate: UserTDO): Promise<UpdateResult>{
+   async updateCancion(id: string, infoUpdate: CancionDTO): Promise<UpdateResult>{
     return (await this.execRepository).update(id, infoUpdate);
     }
+
 }

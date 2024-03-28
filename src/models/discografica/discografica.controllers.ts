@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
 import { Router } from "express";
-import { AdminServices } from "./album.service";
+import { DiscograficaServices } from "./discografica.service";
 
-export class AdminController {
-    private readonly AdminServices: AdminServices = new AdminServices;
+export class DiscograficaController {
+    private readonly AdminServices: DiscograficaServices = new DiscograficaServices;
 
     //obteniendo todos los usuarios
-    async getAdmin(req: Request, res: Response) {
+    async getDiscografica(req: Request, res: Response) {
         try {
-            const data = await this.AdminServices.findAllAdmin();
+            const data = await this.AdminServices.findAllDiscografica();
             res.status(200).json(data);
         } catch (e) {
             console.error(e);
@@ -16,10 +16,10 @@ export class AdminController {
     }
 
     //obteniendo el usuario mediante un ID
-    async getUserById(req: Request, res: Response) {
+    async getDiscograficaById(req: Request, res: Response) {
         const { id } = req.params;
         try {
-            const data = await this.AdminServices.findAdminById(id);
+            const data = await this.AdminServices.findDiscograficaById(id);
             res.status(200).json(data);
         } catch (e) {
             console.error(e);
@@ -27,9 +27,9 @@ export class AdminController {
     }
 
     //crear nuevo usuario
-    async createAdmin(req: Request, res: Response) {
+    async createDiscografica(req: Request, res: Response) {
         try {
-            const data = await this.AdminServices.createAdmin(req.body);
+            const data = await this.AdminServices.createDiscografica(req.body);
             res.status(200).json(data);
         } catch (e) {
             console.error(e);
@@ -37,10 +37,10 @@ export class AdminController {
     }
 
     //modificar usuario
-    async updateAdmin(req: Request, res: Response) {
+    async updateDiscografica(req: Request, res: Response) {
         const { id } = req.params;
         try {
-            const data = await this.AdminServices.updateAdmin(id, req.body);
+            const data = await this.AdminServices.updateDiscografica(id, req.body);
             res.status(200).json(data);
         } catch (e) {
             console.error(e);
@@ -48,10 +48,10 @@ export class AdminController {
     }
 
     //eliminar usuario
-    async deleteUser(req: Request, res: Response) {
+    async deleteDiscografica(req: Request, res: Response) {
         const { id } = req.params;
         try {
-            const data = await this.AdminServices.deleteAdmin(id);
+            const data = await this.AdminServices.deleteDiscografica(id);
             res.status(200).json(data);
         } catch (e) {
             console.error(e);

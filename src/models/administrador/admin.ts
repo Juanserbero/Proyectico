@@ -18,4 +18,23 @@ export class AdminEntity extends BaseEntity {
 
 	@Column()
 	password!: string;
+
+	
+	// Entidad donde se encuentra la llave foranea
+// @OneToOne(()=> UserEntity, (user) => user.customer)
+// @JoinColumn({name: user_id})
+// user!: UserEntity;
+ 
+// Entidad donde no esta la llave foranea
+// @OneToOne(()=> CustomerEntity, (customer) => customer.user)
+// customer!: CustomerEntity 
+// Entidad donde se encuentra la llave foranea
+// @ManyToOne(()=> UserEntity, (user) => user.customer)
+// @JoinColumn({name: user_id})
+// user!: UserEntity;
+//  
+// Entidad donde no esta la llave foranea
+// @OneToMany(()=> CustomerEntity, (customer) => customer.user)
+// customers!: CustomerEntity[]; 
+
 }

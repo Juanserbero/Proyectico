@@ -1,7 +1,7 @@
 import { IsNotEmpty } from "class-validator";
 import { BaseDTO } from "../../config/base.dto";
 
-export class AlbumDTO extends BaseDTO {
+export class Artista_UserDTO extends BaseDTO {
     @IsNotEmpty()
     usuario!: string;
 	
