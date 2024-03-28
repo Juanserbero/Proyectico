@@ -1,7 +1,7 @@
 import { BaseEntity,PrimaryGeneratedColumn,Column, Entity, IntegerType } from "typeorm";
 
 @Entity({ name: "album" })
-	export class UserEntity extends BaseEntity{
+	export class AlbumEntity extends BaseEntity{
     // 	@Column()
     // 	usuario!: 'postgres';
 	// //  ……… atributo
@@ -17,20 +17,23 @@ import { BaseEntity,PrimaryGeneratedColumn,Column, Entity, IntegerType } from "t
 	nombre_album!: string;
 
 	@Column()
-	password!: string;
-
-	@Column()
 	duracion!: String;
 
 	@Column()
-	Fecha_Lanzamiento!: String;
+	Fecha_Lanzamiento!: Date;
 	
 	@Column()
-	Cantidad_de_Canciones!: String;
+	Cantidad_de_Canciones!: number;
 	
 	@Column()
 	Tipo!: String;
 	
 	@Column()
-	duracion!: String;
+	descripcion!: String;
+
+	@Column()
+	artista_id!: string;
+
+	@Column()
+	Discografica_id!: string;
 }

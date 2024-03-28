@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { Router } from "express";
-import { AdminServices } from "./admin.service";
+import { AdminServices } from "./album.service";
 
 export class AdminController {
     private readonly AdminServices: AdminServices = new AdminServices;
@@ -16,7 +16,7 @@ export class AdminController {
     }
 
     //obteniendo el usuario mediante un ID
-    async getAdminById(req: Request, res: Response) {
+    async getUserById(req: Request, res: Response) {
         const { id } = req.params;
         try {
             const data = await this.AdminServices.findAdminById(id);
@@ -48,7 +48,7 @@ export class AdminController {
     }
 
     //eliminar usuario
-    async deleteAdmin(req: Request, res: Response) {
+    async deleteUser(req: Request, res: Response) {
         const { id } = req.params;
         try {
             const data = await this.AdminServices.deleteAdmin(id);
