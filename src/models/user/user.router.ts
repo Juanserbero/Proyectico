@@ -1,8 +1,8 @@
 
-import { Artista_UserController } from "./artista_user.controllers";
+import { Artista_UserController } from "./controller/user.controllers";
 import { BaseRouter } from "../../shared/router/router";
 
-export class UserRouter extends BaseRouter<Artista_UserController>{
+export class artista_user_router extends BaseRouter<Artista_UserController>{
         constructor() {
                 super(Artista_UserController);
         }

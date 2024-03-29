@@ -1,8 +1,8 @@
 
-import { CancionController } from "./cancion.controllers";
+import { CancionController } from "./controller/cancion.controllers";
 import { BaseRouter } from "../../shared/router/router";
 
-export class UserRouter extends BaseRouter<CancionController>{
+export class cancion_router extends BaseRouter<CancionController>{
         constructor() {
                 super(CancionController);
         }

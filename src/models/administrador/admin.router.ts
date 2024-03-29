@@ -1,4 +1,4 @@
-import { AdminController } from "./admin.controllers";
+import { AdminController } from "./controller/admin.controllers";
 import { BaseRouter } from "../../shared/router/router";
 
 export class AdminRouter extends BaseRouter<AdminController>{

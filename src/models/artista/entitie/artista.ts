@@ -1,5 +1,6 @@
-import { BaseEntity,PrimaryGeneratedColumn, Column, Entity, ManyToOne } from "typeorm";
+import { BaseEntity,PrimaryGeneratedColumn, Column, Entity, ManyToOne, OneToOne, JoinColumn } from "typeorm";
 import { AlbumEntity } from "../../album/entitie/album";
+import { Artista_UserEntity } from "../../artista_user/entitie/artista_user";
 
 @Entity({ name: "artista" })
 	export class ArtistaEntity extends BaseEntity{
@@ -13,28 +14,30 @@ import { AlbumEntity } from "../../album/entitie/album";
     // }
 
 	@PrimaryGeneratedColumn()
-	id!: String;
-
-	@Column({ name: "Nombre" })
-	nombre_album!: string;
+	id_artista!: String;
 
 	@Column()
-	duracion!: String;
+	nombre_artista!: string;
 
 	@Column()
-	Fecha_Inicio!: Date;
+	fecha_Inicio!: Date;
 
 	@Column()
-	Pais!: String;
+	pais!: String;
 
 	@Column()
-	Genero!: String;
+	genero!: String;
+
 	@Column()
-	Biografia!: String;
+	biografia!: String;
 
 
 	@ManyToOne(() => AlbumEntity, (album) => album.artistas)
 	album!: AlbumEntity;
+
+	@OneToOne(()=> Artista_UserEntity, (artista_user) => artista_user.artistas,{cascade:true})
+	@JoinColumn({name: 'id_artista_user'})
+	artista_users!: Artista_UserEntity;
 	
 }
 
@@ -46,6 +49,7 @@ import { AlbumEntity } from "../../album/entitie/album";
 // Entidad donde no esta la llave foranea
 // @OneToOne(()=> CustomerEntity, (customer) => customer.user)
 // customer!: CustomerEntity 
+
 // Entidad donde se encuentra la llave foranea
 // @ManyToOne(()=> UserEntity, (user) => user.customer)
 // @JoinColumn({name: user_id})

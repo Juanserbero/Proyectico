@@ -2,7 +2,7 @@
 import { DiscograficaController } from "./discografica.controllers";
 import { BaseRouter } from "../../shared/router/router";
 
-export class UserRouter extends BaseRouter<DiscograficaController>{
+export class discografica_router extends BaseRouter<DiscograficaController>{
         constructor() {
                 super(DiscograficaController);
         }

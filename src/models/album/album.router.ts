@@ -1,4 +1,4 @@
-import { AlbumController } from "./album.controllers";
+import { AlbumController } from "./controllers/album.controllers";
 import { BaseRouter } from "../../shared/router/router";
 
 export class AlbumRouter extends BaseRouter<AlbumController>{

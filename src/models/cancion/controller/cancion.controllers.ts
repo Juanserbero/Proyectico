@@ -1,14 +1,14 @@
 import { Request, Response } from "express";
 import { Router } from "express";
-import { AdminServices } from "./admin.service";
+import { AdminServices } from "../service/cancion.service";
 
-export class AdminController {
+export class CancionController {
     private readonly AdminServices: AdminServices = new AdminServices;
 
     //obteniendo todos los usuarios
-    async getAdmin(req: Request, res: Response) {
+    async getCancion(req: Request, res: Response) {
         try {
-            const data = await this.AdminServices.findAllAdmin();
+            const data = await this.AdminServices.findAllCancion();
             res.status(200).json(data);
         } catch (e) {
             console.error(e);
@@ -16,10 +16,10 @@ export class AdminController {
     }
 
     //obteniendo el usuario mediante un ID
-    async getAdminById(req: Request, res: Response) {
+    async getCancionById(req: Request, res: Response) {
         const { id } = req.params;
         try {
-            const data = await this.AdminServices.findAdminById(id);
+            const data = await this.AdminServices.findCancionById(id);
             res.status(200).json(data);
         } catch (e) {
             console.error(e);
@@ -27,9 +27,9 @@ export class AdminController {
     }
 
     //crear nuevo usuario
-    async createAdmin(req: Request, res: Response) {
+    async createCancion(req: Request, res: Response) {
         try {
-            const data = await this.AdminServices.createAdmin(req.body);
+            const data = await this.AdminServices.createCancion(req.body);
             res.status(200).json(data);
         } catch (e) {
             console.error(e);
@@ -37,10 +37,10 @@ export class AdminController {
     }
 
     //modificar usuario
-    async updateAdmin(req: Request, res: Response) {
+    async updateCancion(req: Request, res: Response) {
         const { id } = req.params;
         try {
-            const data = await this.AdminServices.updateAdmin(id, req.body);
+            const data = await this.AdminServices.updateCancion(id, req.body);
             res.status(200).json(data);
         } catch (e) {
             console.error(e);
@@ -48,10 +48,10 @@ export class AdminController {
     }
 
     //eliminar usuario
-    async deleteAdmin(req: Request, res: Response) {
+    async deleteCancion(req: Request, res: Response) {
         const { id } = req.params;
         try {
-            const data = await this.AdminServices.deleteAdmin(id);
+            const data = await this.AdminServices.deleteCancion(id);
             res.status(200).json(data);
         } catch (e) {
             console.error(e);

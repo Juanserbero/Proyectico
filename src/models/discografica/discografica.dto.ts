@@ -3,8 +3,11 @@ import { BaseDTO } from "../../config/base.dto";
 
 export class DiscograficaDTO extends BaseDTO {
     @IsNotEmpty()
-    usuario!: string;
-	
-    @IsNotEmpty()
-    estado!: string;
+	id!: String;
+
+	@IsNotEmpty()
+	nombre_album!: string;
+
+	@IsNotEmpty()
+	duracioFecha_Creacion!: Date;
 }

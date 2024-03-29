@@ -1,7 +1,7 @@
 import { DeleteResult, UpdateResult } from "typeorm";
-import { BaseService } from "../../config/base.service";
-import { Artista_UserDTO } from "./artista_user.dto";
-import { Artista_UserEntity } from "./entitie/artista_user";
+import { BaseService } from "../../../config/base.service";
+import { Artista_UserDTO } from "../dto/user.dto";
+import { Artista_UserEntity } from "../entitie/user";
 
 export class Artista_UserServices extends BaseService<Artista_UserEntity> {
     constructor(){
@@ -13,8 +13,8 @@ export class Artista_UserServices extends BaseService<Artista_UserEntity> {
     }
      
     // servicio para obtener un usuarios según id
-    async findArtista_UserById(id:String): Promise<Artista_UserEntity | null>  {
-        return (await this.execRepository).findOneBy( {id} );   
+    async findArtista_UserById(id_artista_user:String): Promise<Artista_UserEntity | null>  {
+        return (await this.execRepository).findOneBy( {id_artista_user} );   
     }
     // servicio para crear un usuario
  async createArtista_User(body: Artista_UserDTO): Promise<Artista_UserEntity>{
@@ -22,8 +22,8 @@ export class Artista_UserServices extends BaseService<Artista_UserEntity> {
     }
  
     // eliminar un usuario
-    async deleteArtista_User(id: String): Promise<DeleteResult>{
-        return (await this.execRepository).delete({id});
+    async deleteArtista_User(id_artista_user: String): Promise<DeleteResult>{
+        return (await this.execRepository).delete({id_artista_user});
     }
     // actualizar un usuario
    async updateArtista_User(id: string, infoUpdate: Artista_UserDTO): Promise<UpdateResult>{

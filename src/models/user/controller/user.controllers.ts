@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { Router } from "express";
-import { Artista_UserServices } from "./artista_user.service";
+import { Artista_UserServices } from "../service/user.service";
 
 export class Artista_UserController {
     private readonly Artista_UserServices: Artista_UserServices = new Artista_UserServices;

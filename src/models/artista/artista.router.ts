@@ -1,4 +1,4 @@
-import { ArtistaController } from "./artista.controllers";
+import { ArtistaController } from "./controllers/artista.controllers";
 import { BaseRouter } from "../../shared/router/router";
 
 export class ArtistaRouter extends BaseRouter<ArtistaController>{

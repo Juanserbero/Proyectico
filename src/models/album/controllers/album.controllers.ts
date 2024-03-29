@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { Router } from "express";
-import { AlbumServices } from "./album.service";
+import { AlbumServices } from "../service/album.service";
 
 export class AlbumController {
     private readonly AlbumServices: AlbumServices = new AlbumServices;
